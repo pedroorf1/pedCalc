@@ -3,18 +3,23 @@ import { View, StyleSheet, Text } from "react-native";
 
 export const Young = () => {
   return (
-    <View style={styles.title}>
+    <View style={styles.safe}>
       <Text>Young</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  title: {
+  safe: {
     display: "flex",
-    width: "100%",
+    marginTop: -5,
+    marginBottom: -10,
+    padding: 15,
+    paddingTop: 30,
+    flex: 1,
     fontSize: 20,
     textAlign: "center",
     marginVertical: 8,
+    backgroundColor: "#9932cc",
   },
 });
