@@ -67,7 +67,7 @@ export const Young = () => {
         <View style={styles.resultado}>
           <Text style={styles.title}>Resultado</Text>
           <Text style={styles.textResultados}>
-            Idade da Criança: {dataForCalc.idade}
+            Idade da Criança: {dataForCalc.idade} anos
           </Text>
           <Text style={styles.textResultados}>
             Dose adulta: {dataForCalc.doseAdulta}

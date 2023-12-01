@@ -35,7 +35,7 @@ export default function Menu({ navigation }) {
           }}
         />
         <RButton
-          text="Buscar Remedios"
+          text="Buscar medicamentos"
           action={() => {
             navigation.navigate("Medicamentos");
           }}
