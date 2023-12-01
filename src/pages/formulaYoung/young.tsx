@@ -35,7 +35,7 @@ export const Young = () => {
     <View style={styles.safe}>
       <ScrollView>
         <View>
-          <Text style={styles.label}>Qual a idade da criança?</Text>
+          <Text style={styles.label}>Qual a idade da criança em anos?</Text>
           <TextInput
             style={styles.inputText}
             onChangeText={(idade) =>
@@ -49,7 +49,7 @@ export const Young = () => {
           />
         </View>
         <View>
-          <Text style={styles.label}>Qual a dose adulta?</Text>
+          <Text style={styles.label}>Qual a dose adulta do medicamento?</Text>
           <TextInput
             style={styles.inputText}
             onChangeText={(doseAdulta) =>

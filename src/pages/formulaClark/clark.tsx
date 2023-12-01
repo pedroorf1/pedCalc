@@ -47,7 +47,7 @@ export const Clark = () => {
           />
         </View>
         <View>
-          <Text style={styles.label}>Qual a dose adulta?</Text>
+          <Text style={styles.label}>Qual a dose adulta do medicamento?</Text>
           <TextInput
             style={styles.inputText}
             onChangeText={(doseAdulta) =>
