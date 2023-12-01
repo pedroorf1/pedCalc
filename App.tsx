@@ -3,10 +3,13 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View, StyleSheet } from "react-native";
 
+import baseStyles from "./src/baseStyles/styles.json";
+
 import Menu from "./src/pages/menu/menu";
 import { Young } from "./src/pages/formulaYoung/young";
 import { Fried } from "./src/pages/formulaFried/fried";
 import { Clark } from "./src/pages/formulaClark/clark";
+import { Medicamentos } from "./src/pages/buscarMedicamentos/buscarMedicamentos";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -70,6 +73,20 @@ export default function App() {
               },
             }}
           />
+          <Stack.Screen
+            name="Medicamentos"
+            component={Medicamentos}
+            options={{
+              title: "Buscar Medicamentos",
+              headerStyle: {
+                backgroundColor: "#000080",
+              },
+              headerTintColor: "#fff",
+              headerTitleStyle: {
+                fontWeight: "bold",
+              },
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </View>
@@ -87,6 +104,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: "center",
     marginVertical: 8,
-    backgroundColor: "#9932cc",
+    backgroundColor: baseStyles.bases.backgroundColor,
   },
 });

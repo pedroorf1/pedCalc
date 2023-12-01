@@ -1,12 +1,10 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 
-import baseStyles from "../../baseStyles/styles.json";
-
-export const Young = () => {
+export const Medicamentos = () => {
   return (
     <View style={styles.safe}>
-      <Text>Young</Text>
+      <Text>Buscar medicamentos</Text>
     </View>
   );
 };
@@ -22,6 +20,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: "center",
     marginVertical: 8,
-    backgroundColor: baseStyles.bases.backgroundColor,
+    backgroundColor: "#9932cc",
   },
 });

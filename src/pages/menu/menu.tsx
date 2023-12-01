@@ -1,10 +1,12 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, ScrollView, Text, StyleSheet } from "react-native";
 import { RButton } from "../../components/Button";
-import { Navigation } from "react-native-navigation";
+
+import baseStyles from "../../baseStyles/styles.json";
 
 import { Young } from "../../pages/formulaYoung/young";
 import { Fried } from "../../pages/formulaFried/fried";
 import { Clark } from "../../pages/formulaClark/clark";
+import { Medicamentos } from "../../pages/buscarMedicamentos/buscarMedicamentos";
 
 export default function Menu({ navigation }) {
   return (
@@ -13,7 +15,7 @@ export default function Menu({ navigation }) {
         Para p cálculo de dosagens você pode utilizar umas das equações abaixo
         de acordo a especificidade.
       </Text>
-      <View>
+      <ScrollView>
         <RButton
           text="Young"
           action={() => {
@@ -32,7 +34,13 @@ export default function Menu({ navigation }) {
             navigation.navigate("Fried");
           }}
         />
-      </View>
+        <RButton
+          text="Buscar Remedios"
+          action={() => {
+            navigation.navigate("Medicamentos");
+          }}
+        />
+      </ScrollView>
     </View>
   );
 }
@@ -40,11 +48,16 @@ const styles = StyleSheet.create({
   title: {
     width: "100%",
     color: "#f8f8f8",
-    fontSize: 14,
-    textAlign: "center",
-    marginVertical: 8,
+    fontSize: 20,
+    textAlign: "justify",
+    marginVertical: 16,
+    padding: 10,
+    backgroundColor: "#9932ee",
+    borderRadius: 10,
+    lineHeight: 30,
   },
   menu: {
-    backgroundColor: "#9932cc",
+    flex: 1,
+    backgroundColor: baseStyles.bases.backgroundColor,
   },
 });

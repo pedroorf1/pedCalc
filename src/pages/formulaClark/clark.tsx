@@ -1,6 +1,8 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 
+import baseStyles from "../../baseStyles/styles.json";
+
 export const Clark = () => {
   return (
     <View style={styles.safe}>
@@ -20,6 +22,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: "center",
     marginVertical: 8,
-    backgroundColor: "#9932cc",
+    backgroundColor: baseStyles.bases.backgroundColor,
   },
 });
