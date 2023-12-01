@@ -4,6 +4,7 @@ import { TouchableOpacity, StyleSheet, Text } from "react-native";
 type TProps = {
   text: string;
   action: () => any | void;
+  bstyles?: StyleSheet | any;
 };
 
 export const RButton = ({ text, action }: TProps) => {
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginVertical: 8,
-    height: 100,
+    height: 60,
   },
   RbuttonText: {
     color: "#f8f8ff",

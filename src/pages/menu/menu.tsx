@@ -12,7 +12,7 @@ export default function Menu({ navigation }) {
   return (
     <View style={styles.menu}>
       <Text style={styles.title}>
-        Para p cálculo de dosagens você pode utilizar umas das equações abaixo
+        Para o cálculo de dosagens você pode utilizar umas das equações abaixo
         de acordo a especificidade.
       </Text>
       <ScrollView>

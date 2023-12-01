@@ -1,5 +1,10 @@
 {
     "bases":{
-        "backgroundColor":"#8c52ff"
+        "backgroundColor":"#0000CD",
+        "color":"#FFFFFF"
+    },
+    "titleI":{
+        "backgroundColor":"#0000CD",
+        "color":"#FFFFFF"
     }
 }
