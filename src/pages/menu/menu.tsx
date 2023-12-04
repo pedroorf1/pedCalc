@@ -16,30 +16,10 @@ export default function Menu({ navigation }) {
         de acordo a especificidade.
       </Text>
       <ScrollView>
-        <RButton
-          text="Young"
-          action={() => {
-            navigation.navigate("Young");
-          }}
-        />
-        <RButton
-          text="Clark"
-          action={() => {
-            navigation.navigate("Clark");
-          }}
-        />
-        <RButton
-          text="Fiend"
-          action={() => {
-            navigation.navigate("Fried");
-          }}
-        />
-        <RButton
-          text="Buscar medicamentos"
-          action={() => {
-            navigation.navigate("Medicamentos");
-          }}
-        />
+        <RButton text="Young" action={() => {}} />
+        <RButton text="Clark" action={() => {}} />
+        <RButton text="Fiend" action={() => {}} />
+        <RButton text="Buscar medicamentos" action={() => {}} />
       </ScrollView>
     </View>
   );
