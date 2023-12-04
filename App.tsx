@@ -1,6 +1,4 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View, StyleSheet } from "react-native";
 
 import baseStyles from "./src/baseStyles/styles.json";
@@ -11,86 +9,8 @@ import { Fried } from "./src/pages/formulaFried/fried";
 import { Clark } from "./src/pages/formulaClark/clark";
 import { Medicamentos } from "./src/pages/buscarMedicamentos/buscarMedicamentos";
 
-const Stack = createNativeStackNavigator();
 export default function App() {
-  return (
-    <View style={styles.safe}>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Menu">
-          <Stack.Screen
-            name="Menu"
-            component={Menu}
-            options={{
-              title: "Menu",
-              headerStyle: {
-                backgroundColor: "#000080",
-              },
-              headerTintColor: "#fff",
-              headerTitleStyle: {
-                fontWeight: "bold",
-              },
-            }}
-          />
-          <Stack.Screen
-            name="Young"
-            component={Young}
-            options={{
-              title: "Young",
-              headerStyle: {
-                backgroundColor: "#000080",
-              },
-              headerTintColor: "#fff",
-              headerTitleStyle: {
-                fontWeight: "bold",
-              },
-            }}
-          />
-          <Stack.Screen
-            name="Fried"
-            component={Fried}
-            options={{
-              title: "Fried",
-              headerStyle: {
-                backgroundColor: "#000080",
-              },
-              headerTintColor: "#fff",
-              headerTitleStyle: {
-                fontWeight: "bold",
-              },
-            }}
-          />
-          <Stack.Screen
-            name="Clark"
-            component={Clark}
-            options={{
-              title: "Clark",
-              headerStyle: {
-                backgroundColor: "#000080",
-              },
-              headerTintColor: "#fff",
-              headerTitleStyle: {
-                fontWeight: "bold",
-              },
-            }}
-          />
-          <Stack.Screen
-            name="Medicamentos"
-            component={Medicamentos}
-            options={{
-              title: "Buscar Medicamentos",
-              headerStyle: {
-                backgroundColor: "#000080",
-              },
-              headerTintColor: "#fff",
-              headerTitleStyle: {
-                fontWeight: "bold",
-              },
-            }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </View>
-  );
+  return <View style={styles.safe}></View>;
 }
 
 const styles = StyleSheet.create({

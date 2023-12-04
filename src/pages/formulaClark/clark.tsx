@@ -2,6 +2,7 @@ import React from "react";
 import { View, ScrollView, StyleSheet, Text, TextInput } from "react-native";
 
 import baseStyles from "../../baseStyles/styles.json";
+import { GoToMenu } from "../../components/GoToMenu";
 
 export const Clark = () => {
   type TDataType = {
@@ -74,6 +75,7 @@ export const Clark = () => {
           <Text style={styles.textResultadosDosagem}>{result}</Text>
         </View>
       </ScrollView>
+      <GoToMenu />
     </View>
   );
 };
