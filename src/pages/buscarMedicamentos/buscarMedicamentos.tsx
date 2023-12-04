@@ -2,11 +2,13 @@ import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 
 import baseStyles from "../../baseStyles/styles.json";
+import { GoToMenu } from "../../components/GoToMenu";
 
 export const Medicamentos = () => {
   return (
     <View style={styles.safe}>
       <Text style={styles.title}>Buscar medicamentos</Text>
+      <GoToMenu />
     </View>
   );
 };

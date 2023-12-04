@@ -1,7 +1,10 @@
 import React from "react";
 import { View, ScrollView, StyleSheet, Text, TextInput } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import baseStyles from "../../baseStyles/styles.json";
+
+import { GoToMenu } from "../../components/GoToMenu";
 
 export const Young = () => {
   type TDataType = {
@@ -13,6 +16,7 @@ export const Young = () => {
     resultado?: number;
   };
 
+  const navigation = useNavigation();
   const [dataForCalc, setDataForCalc] = React.useState<TDataType>({
     idade: 0,
     doseAdulta: 0,
@@ -76,6 +80,7 @@ export const Young = () => {
           <Text style={styles.textResultadosDosagem}>{result}</Text>
         </View>
       </ScrollView>
+      <GoToMenu />
     </View>
   );
 };
