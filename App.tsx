@@ -3,14 +3,10 @@ import { View, StyleSheet } from "react-native";
 
 import baseStyles from "./src/baseStyles/styles.json";
 
-import Menu from "./src/pages/menu/menu";
-import { Young } from "./src/pages/formulaYoung/young";
-import { Fried } from "./src/pages/formulaFried/fried";
-import { Clark } from "./src/pages/formulaClark/clark";
-import { Medicamentos } from "./src/pages/buscarMedicamentos/buscarMedicamentos";
+import { Routes } from "./src/routes";
 
 export default function App() {
-  return <View style={styles.safe}></View>;
+  return <Routes />;
 }
 
 const styles = StyleSheet.create({
