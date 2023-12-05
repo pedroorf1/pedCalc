@@ -11,11 +11,6 @@ export default function Menu() {
 
   return (
     <View style={styles.menu}>
-      <Text style={styles.message}>
-        <Ionicons name="alert" size={30} color="orange" margin={50} />
-        Para o cálculo de dosagens você pode utilizar umas das equações abaixo
-        de acordo a especificidade.
-      </Text>
       <ScrollView>
         <RButton
           text="Young"
