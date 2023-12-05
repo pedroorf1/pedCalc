@@ -1,6 +1,5 @@
 import React from "react";
 import { View, ScrollView, StyleSheet, Text, TextInput } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
 import { styleMenu } from "../../baseStyles/menuPagesFormulasButtons";
 
@@ -13,13 +12,14 @@ export const Young = () => {
     altura?: number;
     sexo?: string;
     doseAdulta?: number;
+    dosesDiarias?: number;
     resultado?: number;
   };
 
-  const navigation = useNavigation();
   const [dataForCalc, setDataForCalc] = React.useState<TDataType>({
     idade: 0,
     doseAdulta: 0,
+    dosesDiarias: 0,
   } as TDataType);
 
   const [result, setResult] = React.useState(0);
@@ -49,6 +49,7 @@ export const Young = () => {
                   !globalRegex.test(idade) && idade != "" ? parseInt(idade) : 0,
               })
             }
+            keyboardType="numeric"
             defaultValue="0"
           />
         </View>
@@ -67,6 +68,24 @@ export const Young = () => {
                     : 0,
               })
             }
+            keyboardType="numeric"
+            defaultValue="0"
+          />
+        </View>
+        <View>
+          <Text style={styleMenu.label}>
+            Qual a quantidade de doses diárias?
+          </Text>
+          <TextInput
+            style={styleMenu.inputText}
+            onChangeText={(doses) =>
+              setDataForCalc({
+                ...dataForCalc,
+                dosesDiarias:
+                  !globalRegex.test(doses) && doses != "" ? parseInt(doses) : 0,
+              })
+            }
+            keyboardType="numeric"
             defaultValue="0"
           />
         </View>
@@ -78,8 +97,17 @@ export const Young = () => {
           <Text style={styleMenu.textResultados}>
             Dose adulta: {dataForCalc.doseAdulta}
           </Text>
-          <Text style={styleMenu.textResultados}>Dosagem encontrada</Text>
+          <Text style={styleMenu.textResultados}>
+            Dosagem total diária encontrada
+          </Text>
           <Text style={styleMenu.textResultadosDosagem}>{result}</Text>
+          <Text style={styleMenu.textResultados}>Aplicação</Text>
+          <Text style={styleMenu.textResultadosDosagem}>
+            {result & dataForCalc.dosesDiarias
+              ? Number(result / dataForCalc.dosesDiarias).toFixed(2)
+              : null}{" "}
+            / {dataForCalc.dosesDiarias}X ao dia
+          </Text>
         </View>
       </ScrollView>
       <GoToMenu />

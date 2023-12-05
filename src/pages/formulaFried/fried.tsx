@@ -11,12 +11,14 @@ export const Fried = () => {
     altura?: number;
     sexo?: string;
     doseAdulta?: number;
+    dosesDiarias?: number;
     resultado?: number;
   };
 
   const [dataForCalc, setDataForCalc] = React.useState<TDataType>({
     idade: 0,
     doseAdulta: 0,
+    dosesDiarias: 0,
   } as TDataType);
 
   const [result, setResult] = React.useState(0);
@@ -44,6 +46,7 @@ export const Fried = () => {
                   !globalRegex.test(idade) && idade != "" ? parseInt(idade) : 0,
               })
             }
+            keyboardType="numeric"
             defaultValue="0"
           />
         </View>
@@ -62,6 +65,24 @@ export const Fried = () => {
                     : 0,
               })
             }
+            keyboardType="numeric"
+            defaultValue="0"
+          />
+        </View>
+        <View>
+          <Text style={styleMenu.label}>
+            Qual a quantidade de doses diárias?
+          </Text>
+          <TextInput
+            style={styleMenu.inputText}
+            onChangeText={(doses) =>
+              setDataForCalc({
+                ...dataForCalc,
+                dosesDiarias:
+                  !globalRegex.test(doses) && doses != "" ? parseInt(doses) : 0,
+              })
+            }
+            keyboardType="numeric"
             defaultValue="0"
           />
         </View>
@@ -73,8 +94,15 @@ export const Fried = () => {
           <Text style={styleMenu.textResultados}>
             Dose adulta: {dataForCalc.doseAdulta}
           </Text>
-          <Text style={styleMenu.textResultados}>Dosagem encontrada</Text>
+          <Text style={styleMenu.textResultados}>Dosagem total encontrada</Text>
           <Text style={styleMenu.textResultadosDosagem}>{result}</Text>
+          <Text style={styleMenu.textResultados}>Aplicação</Text>
+          <Text style={styleMenu.textResultadosDosagem}>
+            {result & dataForCalc.dosesDiarias
+              ? Number(result / dataForCalc.dosesDiarias).toFixed(2)
+              : null}{" "}
+            / {dataForCalc.dosesDiarias}X ao dia
+          </Text>
         </View>
       </ScrollView>
       <GoToMenu />
