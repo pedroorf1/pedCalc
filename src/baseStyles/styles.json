@@ -6,5 +6,9 @@
     "titleI":{
         "backgroundColor":"#0000CD",
         "color":"#FFFFFF"
-    }
+    },
+    "PagesFormulas":{
+        "backgroundColor":"#0000CD",
+        "color":"#FFFFFF"
+    }   
 }
