@@ -1,18 +1,35 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
+
+import { HeaderMenuItem } from "./headerMenuItem";
 
 export const Header = () => {
   return (
     <View style={styles.header}>
-      <TouchableOpacity>
-        <Text>Home</Text>
+      {/* <TouchableOpacity>
+        <Ionicons name="home" color="gray" size={16}>
+          <Text>Home</Text>
+        </Ionicons>
       </TouchableOpacity>
       <TouchableOpacity>
-        <Text>Equações</Text>
+        <Ionicons name="calculator" color="gray" size={16}>
+          <Text>Equações</Text>
+        </Ionicons>
       </TouchableOpacity>
       <TouchableOpacity>
-        <Text>Sobre</Text>
-      </TouchableOpacity>
+        <Ionicons name="home" color="gray" size={16}>
+          <Text>Sobre</Text>
+        </Ionicons>
+      </TouchableOpacity> */}
+      <HeaderMenuItem text="Home" color="gray" size={16} icon="home" />
+      <HeaderMenuItem
+        text="Formulas"
+        color="gray"
+        size={16}
+        icon="calculator"
+      />
+      <HeaderMenuItem text="Sobre" color="gray" size={16} icon="create" />
     </View>
   );
 };

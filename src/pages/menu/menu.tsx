@@ -1,6 +1,5 @@
 import { View, ScrollView, Text, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import Ionicons from "@expo/vector-icons/Ionicons";
 
 import { propsStack } from "../../types/stackProps";
 import { RButton } from "../../components/Button";
