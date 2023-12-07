@@ -1,7 +1,10 @@
 import React from "react";
+import { NativeBaseProvider, StatusBar } from "native-base";
 import { View, StyleSheet } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
 import { Routes } from "./src/routes";
+
+import { THEM } from "./src/baseStyles/thems";
 
 SplashScreen.preventAutoHideAsync();
 export default function App() {
@@ -11,9 +14,11 @@ export default function App() {
     }, 3000);
   }, []);
   return (
-    <View style={styles.container}>
-      <Routes />
-    </View>
+    <NativeBaseProvider theme={THEM}>
+      <View style={styles.container}>
+        <Routes />
+      </View>
+    </NativeBaseProvider>
   );
 }
 

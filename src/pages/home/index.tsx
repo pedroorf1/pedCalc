@@ -1,37 +1,29 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { Image, Box, VStack } from "native-base";
+
 import { Header } from "../../components/Header";
 
 import { StyleSheet } from "react-native";
 import baseStyles from "../../baseStyles/styles.json";
 //assets
-import bg from "../../assets/splash.png";
-import loader from "../../assets/loader.gif";
+import bg from "../../assets/imgs/splash.png";
 
 export const Home = () => {
-  const [isLoading, setLoading] = React.useState(true);
-
-  React.useEffect(() => {
-    if (bg) {
-      setLoading(false);
-    }
-  }, [bg]);
-
-  if (isLoading) {
-    return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Image source={bg} alt="bg" />
-      </View>
-    );
-  }
-
   return (
     <>
       <Header />
-      <View style={styles.container}>
-        <Text style={styles.text}>Home</Text>
-        <Image source={loader} alt="loader" />
-      </View>
+      <VStack
+        flex={1}
+        alignItems="center"
+        p={5}
+        w="100%"
+        justifyContent="center"
+        bg={baseStyles.bases.backgroundColor}
+      >
+        <Box style={styles.container}>
+          <Image source={bg} alt="logo" flex={1} />
+        </Box>
+      </VStack>
     </>
   );
 };
