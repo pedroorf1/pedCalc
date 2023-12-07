@@ -1,35 +1,36 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import Ionicons from "@expo/vector-icons/Ionicons";
+import { View, StyleSheet } from "react-native";
 
 import { HeaderMenuItem } from "./headerMenuItem";
 
+import { useNavigation } from "@react-navigation/native";
+
+import { propsStack } from "../types/stackProps";
 export const Header = () => {
+  const navigation = useNavigation<propsStack>();
   return (
     <View style={styles.header}>
-      {/* <TouchableOpacity>
-        <Ionicons name="home" color="gray" size={16}>
-          <Text>Home</Text>
-        </Ionicons>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Ionicons name="calculator" color="gray" size={16}>
-          <Text>Equações</Text>
-        </Ionicons>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Ionicons name="home" color="gray" size={16}>
-          <Text>Sobre</Text>
-        </Ionicons>
-      </TouchableOpacity> */}
-      <HeaderMenuItem text="Home" color="gray" size={16} icon="home" />
+      <HeaderMenuItem
+        text="Home"
+        color="gray"
+        size={16}
+        icon="home"
+        action={() => navigation.navigate("home")}
+      />
       <HeaderMenuItem
         text="Formulas"
         color="gray"
         size={16}
         icon="calculator"
+        action={() => navigation.navigate("menu")}
       />
-      <HeaderMenuItem text="Sobre" color="gray" size={16} icon="create" />
+      <HeaderMenuItem
+        text="Sobre"
+        color="gray"
+        size={16}
+        icon="create"
+        action={() => navigation.navigate("sobre")}
+      />
     </View>
   );
 };
