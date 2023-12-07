@@ -7,7 +7,7 @@ import baseStyles from "../../baseStyles/styles.json";
 
 import { Header } from "../../components/Header";
 
-export default function Menu() {
+export default function Formulas() {
   const navigation = useNavigation<propsStack>();
 
   return (
@@ -48,22 +48,8 @@ export default function Menu() {
   );
 }
 const styles = StyleSheet.create({
-  message: {
-    width: "100%",
-    color: "#f8f8f8",
-    fontSize: 25,
-    textAlign: "justify",
-    marginVertical: 16,
-    marginTop: 30,
-    padding: 10,
-    backgroundColor: "#000080",
-    lineHeight: 30,
-  },
   menu: {
     flex: 1,
     backgroundColor: baseStyles.bases.backgroundColor,
-  },
-  iconn: {
-    padding: 30,
   },
 });

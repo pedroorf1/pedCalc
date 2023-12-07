@@ -22,7 +22,7 @@ export const Header = () => {
         color="gray"
         size={16}
         icon="calculator"
-        action={() => navigation.navigate("menu")}
+        action={() => navigation.navigate("formulas")}
       />
       <HeaderMenuItem
         text="Sobre"

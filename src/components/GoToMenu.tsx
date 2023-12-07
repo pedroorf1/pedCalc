@@ -7,7 +7,7 @@ import { propsStack } from "../types/stackProps";
 export const GoToMenu = () => {
   const navigation = useNavigation<propsStack>();
   return (
-    <TouchableOpacity onPress={() => navigation.navigate("menu")}>
+    <TouchableOpacity onPress={() => navigation.navigate("formulas")}>
       <Text style={styles.text}>Voltar</Text>
     </TouchableOpacity>
   );

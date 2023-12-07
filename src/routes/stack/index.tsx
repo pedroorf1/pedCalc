@@ -1,7 +1,7 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Menu from "../../pages/menu/menu";
+import Formulas from "../../pages/formulas/formulas";
 import { Clark } from "../../pages/formulaClark/clark";
 import { Fried } from "../../pages/formulaFried/fried";
 import { Young } from "../../pages/formulaYoung/young";
@@ -23,7 +23,7 @@ export const Stack = () => {
       <Screen name="clark" component={Clark} />
       <Screen name="fried" component={Fried} />
       <Screen name="medicamentos" component={Medicamentos} />
-      <Screen name="menu" component={Menu} />
+      <Screen name="formulas" component={Formulas} />
     </Navigator>
   );
 };
