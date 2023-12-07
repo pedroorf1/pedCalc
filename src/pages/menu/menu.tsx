@@ -6,41 +6,46 @@ import { propsStack } from "../../types/stackProps";
 import { RButton } from "../../components/Button";
 import baseStyles from "../../baseStyles/styles.json";
 
+import { Header } from "../../components/Header";
+
 export default function Menu() {
   const navigation = useNavigation<propsStack>();
 
   return (
-    <View style={styles.menu}>
-      <ScrollView>
-        <RButton
-          text="Young"
-          icon="share"
-          iconColor="orange"
-          description="Baseado na idade em anos"
-          action={() => navigation.navigate("young")}
-        />
-        <RButton
-          text="Clark"
-          icon="share"
-          iconColor="orange"
-          description="Baseado no peso em kg"
-          action={() => navigation.navigate("clark")}
-        />
-        <RButton
-          text="Fiend"
-          icon="share"
-          iconColor="orange"
-          description="Baseado na idade em meses"
-          action={() => navigation.navigate("fried")}
-        />
-        <RButton
-          text="Buscar medicamentos"
-          icon="magnet"
-          iconColor="orange"
-          action={() => navigation.navigate("medicamentos")}
-        />
-      </ScrollView>
-    </View>
+    <>
+      <Header />
+      <View style={styles.menu}>
+        <ScrollView>
+          <RButton
+            text="Young"
+            icon="share"
+            iconColor="orange"
+            description="Baseado na idade em anos"
+            action={() => navigation.navigate("young")}
+          />
+          <RButton
+            text="Clark"
+            icon="share"
+            iconColor="orange"
+            description="Baseado no peso em kg"
+            action={() => navigation.navigate("clark")}
+          />
+          <RButton
+            text="Fiend"
+            icon="share"
+            iconColor="orange"
+            description="Baseado na idade em meses"
+            action={() => navigation.navigate("fried")}
+          />
+          <RButton
+            text="Buscar medicamentos"
+            icon="magnet"
+            iconColor="orange"
+            action={() => navigation.navigate("medicamentos")}
+          />
+        </ScrollView>
+      </View>
+    </>
   );
 }
 const styles = StyleSheet.create({

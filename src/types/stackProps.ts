@@ -6,6 +6,9 @@ export type propsNavigationStack = {
   clark: undefined;
   menu: undefined;
   medicamentos: undefined;
+  home: undefined;
+  formulas: undefined;
+  sobre: undefined;
 };
 
 export type propsStack = NativeStackNavigationProp<propsNavigationStack>;

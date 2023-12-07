@@ -1,14 +1,26 @@
 import React from "react";
-import { ScrollView } from "react-native";
+import { View, StyleSheet } from "react-native";
+import * as SplashScreen from "expo-splash-screen";
 import { Routes } from "./src/routes";
 
-import { Header } from "./src/components/Header";
-
+SplashScreen.preventAutoHideAsync();
 export default function App() {
+  React.useEffect(() => {
+    setTimeout(() => {
+      SplashScreen.hideAsync();
+    }, 3000);
+  }, []);
   return (
-    <>
-      <Header />
+    <View style={styles.container}>
       <Routes />
-    </>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    display: "flex",
+    flex: 1,
+    marginTop: 30,
+  },
+});

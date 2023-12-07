@@ -5,6 +5,8 @@ import { styleMenu } from "../../baseStyles/menuPagesFormulasButtons";
 
 import { GoToMenu } from "../../components/GoToMenu";
 
+import { Header } from "../../components/Header";
+
 export const Young = () => {
   type TDataType = {
     idade?: number;
@@ -36,81 +38,90 @@ export const Young = () => {
   }, [dataForCalc]);
 
   return (
-    <View style={styleMenu.safe}>
-      <ScrollView>
-        <View>
-          <Text style={styleMenu.label}>Qual a idade da criança em anos?</Text>
-          <TextInput
-            style={styleMenu.inputText}
-            onChangeText={(idade) =>
-              setDataForCalc({
-                ...dataForCalc,
-                idade:
-                  !globalRegex.test(idade) && idade != "" ? parseInt(idade) : 0,
-              })
-            }
-            keyboardType="numeric"
-            defaultValue="0"
-          />
-        </View>
-        <View>
-          <Text style={styleMenu.label}>
-            Qual a dose adulta do medicamento?
-          </Text>
-          <TextInput
-            style={styleMenu.inputText}
-            onChangeText={(doseAdulta) =>
-              setDataForCalc({
-                ...dataForCalc,
-                doseAdulta:
-                  !globalRegex.test(doseAdulta) && doseAdulta != ""
-                    ? parseInt(doseAdulta)
-                    : 0,
-              })
-            }
-            keyboardType="numeric"
-            defaultValue="0"
-          />
-        </View>
-        <View>
-          <Text style={styleMenu.label}>
-            Qual a quantidade de doses diárias?
-          </Text>
-          <TextInput
-            style={styleMenu.inputText}
-            onChangeText={(doses) =>
-              setDataForCalc({
-                ...dataForCalc,
-                dosesDiarias:
-                  !globalRegex.test(doses) && doses != "" ? parseInt(doses) : 0,
-              })
-            }
-            keyboardType="numeric"
-            defaultValue="0"
-          />
-        </View>
-        <View style={styleMenu.resultado}>
-          <Text style={styleMenu.title}>Resultado</Text>
-          <Text style={styleMenu.textResultados}>
-            Idade da Criança: {dataForCalc.idade} anos
-          </Text>
-          <Text style={styleMenu.textResultados}>
-            Dose adulta: {dataForCalc.doseAdulta}
-          </Text>
-          <Text style={styleMenu.textResultados}>
-            Dosagem total diária encontrada
-          </Text>
-          <Text style={styleMenu.textResultadosDosagem}>{result}</Text>
-          <Text style={styleMenu.textResultados}>Aplicação</Text>
-          <Text style={styleMenu.textResultadosDosagem}>
-            {result & dataForCalc.dosesDiarias
-              ? Number(result / dataForCalc.dosesDiarias).toFixed(2)
-              : null}{" "}
-            / {dataForCalc.dosesDiarias}X ao dia
-          </Text>
-        </View>
-      </ScrollView>
-      <GoToMenu />
-    </View>
+    <>
+      <Header />
+      <View style={styleMenu.safe}>
+        <ScrollView>
+          <View>
+            <Text style={styleMenu.label}>
+              Qual a idade da criança em anos?
+            </Text>
+            <TextInput
+              style={styleMenu.inputText}
+              onChangeText={(idade) =>
+                setDataForCalc({
+                  ...dataForCalc,
+                  idade:
+                    !globalRegex.test(idade) && idade != ""
+                      ? parseInt(idade)
+                      : 0,
+                })
+              }
+              keyboardType="numeric"
+              defaultValue="0"
+            />
+          </View>
+          <View>
+            <Text style={styleMenu.label}>
+              Qual a dose adulta do medicamento?
+            </Text>
+            <TextInput
+              style={styleMenu.inputText}
+              onChangeText={(doseAdulta) =>
+                setDataForCalc({
+                  ...dataForCalc,
+                  doseAdulta:
+                    !globalRegex.test(doseAdulta) && doseAdulta != ""
+                      ? parseInt(doseAdulta)
+                      : 0,
+                })
+              }
+              keyboardType="numeric"
+              defaultValue="0"
+            />
+          </View>
+          <View>
+            <Text style={styleMenu.label}>
+              Qual a quantidade de doses diárias?
+            </Text>
+            <TextInput
+              style={styleMenu.inputText}
+              onChangeText={(doses) =>
+                setDataForCalc({
+                  ...dataForCalc,
+                  dosesDiarias:
+                    !globalRegex.test(doses) && doses != ""
+                      ? parseInt(doses)
+                      : 0,
+                })
+              }
+              keyboardType="numeric"
+              defaultValue="0"
+            />
+          </View>
+          <View style={styleMenu.resultado}>
+            <Text style={styleMenu.title}>Resultado</Text>
+            <Text style={styleMenu.textResultados}>
+              Idade da Criança: {dataForCalc.idade} anos
+            </Text>
+            <Text style={styleMenu.textResultados}>
+              Dose adulta: {dataForCalc.doseAdulta}
+            </Text>
+            <Text style={styleMenu.textResultados}>
+              Dosagem total diária encontrada
+            </Text>
+            <Text style={styleMenu.textResultadosDosagem}>{result}</Text>
+            <Text style={styleMenu.textResultados}>Aplicação</Text>
+            <Text style={styleMenu.textResultadosDosagem}>
+              {result & dataForCalc.dosesDiarias
+                ? Number(result / dataForCalc.dosesDiarias).toFixed(2)
+                : null}{" "}
+              / {dataForCalc.dosesDiarias}X ao dia
+            </Text>
+          </View>
+        </ScrollView>
+        <GoToMenu />
+      </View>
+    </>
   );
 };
