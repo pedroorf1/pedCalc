@@ -1,25 +1,31 @@
 import React from "react";
+import { NativeBaseProvider, StatusBar } from "native-base";
 import { View, StyleSheet } from "react-native";
-
-import baseStyles from "./src/baseStyles/styles.json";
-
+import * as SplashScreen from "expo-splash-screen";
 import { Routes } from "./src/routes";
 
+import { THEM } from "./src/baseStyles/thems";
+
+SplashScreen.preventAutoHideAsync();
 export default function App() {
-  return <Routes />;
+  React.useEffect(() => {
+    setTimeout(() => {
+      SplashScreen.hideAsync();
+    }, 3000);
+  }, []);
+  return (
+    <NativeBaseProvider theme={THEM}>
+      <View style={styles.container}>
+        <Routes />
+      </View>
+    </NativeBaseProvider>
+  );
 }
 
 const styles = StyleSheet.create({
-  safe: {
+  container: {
     display: "flex",
-    marginTop: -5,
-    marginBottom: -10,
-    padding: 15,
-    paddingTop: 30,
     flex: 1,
-    fontSize: 20,
-    textAlign: "center",
-    marginVertical: 8,
-    backgroundColor: baseStyles.bases.backgroundColor,
+    marginTop: 30,
   },
 });

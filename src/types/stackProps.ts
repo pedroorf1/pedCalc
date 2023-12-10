@@ -5,7 +5,10 @@ export type propsNavigationStack = {
   fried: undefined;
   clark: undefined;
   menu: undefined;
-  medicamentos: undefined;
+  termos: undefined;
+  home: undefined;
+  formulas: undefined;
+  sobre: undefined;
 };
 
 export type propsStack = NativeStackNavigationProp<propsNavigationStack>;
