@@ -13,7 +13,19 @@ export default function Formulas() {
   return (
     <>
       <Header />
-      <View style={styles.menu}>
+      <View style={styles.alertContainer}>
+        <Text style={styles.alertText}>
+          O uso destas fórmulas implica na concordância dos termos. Acesse o
+          termos clicando{" "}
+          <Text
+            style={styles.link}
+            onPress={() => navigation.navigate("termos")}
+          >
+            aqui.
+          </Text>
+        </Text>
+      </View>
+      <View style={styles.formulasContainer}>
         <ScrollView>
           <RButton
             text="Young"
@@ -36,20 +48,31 @@ export default function Formulas() {
             description="Baseado na idade em meses"
             action={() => navigation.navigate("fried")}
           />
-          <RButton
-            text="Buscar medicamentos"
-            icon="magnet"
-            iconColor="orange"
-            action={() => navigation.navigate("medicamentos")}
-          />
         </ScrollView>
       </View>
     </>
   );
 }
 const styles = StyleSheet.create({
-  menu: {
+  formulasContainer: {
     flex: 1,
     backgroundColor: baseStyles.bases.backgroundColor,
+    verticalAlign: "middle",
+  },
+  alertContainer: {
+    backgroundColor: "orange",
+  },
+  alertText: {
+    padding: 10,
+    color: "white",
+    fontSize: 18,
+    textAlign: "justify",
+  },
+  link: {
+    padding: 10,
+    color: "#FF1493",
+    fontSize: 18,
+    textAlign: "justify",
+    cursor: "pointer",
   },
 });

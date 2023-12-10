@@ -5,7 +5,7 @@ import Formulas from "../../pages/formulas/formulas";
 import { Clark } from "../../pages/formulaClark/clark";
 import { Fried } from "../../pages/formulaFried/fried";
 import { Young } from "../../pages/formulaYoung/young";
-import { Medicamentos } from "../../pages/buscarMedicamentos/buscarMedicamentos";
+import { Termos } from "../../pages/termos/termos";
 
 import { Home } from "../../pages/home";
 import { Sobre } from "../../pages/sobre";
@@ -22,7 +22,7 @@ export const Stack = () => {
       <Screen name="young" component={Young} />
       <Screen name="clark" component={Clark} />
       <Screen name="fried" component={Fried} />
-      <Screen name="medicamentos" component={Medicamentos} />
+      <Screen name="termos" component={Termos} />
       <Screen name="formulas" component={Formulas} />
     </Navigator>
   );
