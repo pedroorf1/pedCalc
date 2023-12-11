@@ -2,9 +2,7 @@ import React from "react";
 import { View, ScrollView, StyleSheet, Text, TextInput } from "react-native";
 
 import { styleMenu } from "../../baseStyles/menuPagesFormulasButtons";
-
 import { GoToMenu } from "../../components/GoToMenu";
-
 import { Header } from "../../components/Header";
 
 export const Young = () => {
@@ -18,13 +16,16 @@ export const Young = () => {
     resultado?: number;
   };
 
+  const [result, setResult] = React.useState(0);
   const [dataForCalc, setDataForCalc] = React.useState<TDataType>({
     idade: 0,
     doseAdulta: 0,
     dosesDiarias: 0,
   } as TDataType);
 
-  const [result, setResult] = React.useState(0);
+  const refIdade = React.useRef();
+  const refDoseAdulta = React.useRef();
+  const refDoseDiaria = React.useRef();
 
   const globalRegex = new RegExp(/[a-zA-Z@$&_]/, "g");
   const idadeAdicional = 12;
@@ -35,7 +36,12 @@ export const Young = () => {
       dataForCalc.doseAdulta;
     calc = Number(calc.toFixed(2));
     setResult(calc);
-  }, [dataForCalc]);
+  }, [
+    dataForCalc,
+    refIdade.current,
+    refDoseAdulta.current,
+    refDoseDiaria.current,
+  ]);
 
   return (
     <>
@@ -59,6 +65,7 @@ export const Young = () => {
               }
               keyboardType="numeric"
               defaultValue="0"
+              ref={refIdade}
             />
           </View>
           <View>
@@ -78,6 +85,7 @@ export const Young = () => {
               }
               keyboardType="numeric"
               defaultValue="0"
+              ref={refDoseAdulta}
             />
           </View>
           <View>
@@ -97,6 +105,7 @@ export const Young = () => {
               }
               keyboardType="numeric"
               defaultValue="0"
+              ref={refDoseDiaria}
             />
           </View>
           <View style={styleMenu.resultado}>
