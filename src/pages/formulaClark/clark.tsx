@@ -41,6 +41,7 @@ export const Clark = () => {
     <>
       <Header />
       <View style={styleMenu.safe}>
+        <Text style={styleMenu.label}>EQUAÇÃO DE CLARK</Text>
         <ScrollView>
           <View>
             <Text style={styleMenu.label}>Qual o peso da criança em kg?</Text>

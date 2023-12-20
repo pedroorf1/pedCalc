@@ -44,6 +44,7 @@ export const Fried = () => {
     <>
       <Header />
       <View style={styleMenu.safe}>
+        <Text style={styleMenu.label}>EQUAÇÃO DE FRIED</Text>
         <ScrollView>
           <View>
             <Text style={styleMenu.label}>

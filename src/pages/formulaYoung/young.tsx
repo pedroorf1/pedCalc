@@ -47,6 +47,7 @@ export const Young = () => {
     <>
       <Header />
       <View style={styleMenu.safe}>
+        <Text style={styleMenu.label}>EQUAÇÃO DE YOUNG</Text>
         <ScrollView>
           <View>
             <Text style={styleMenu.label}>
