@@ -18,13 +18,15 @@ export const Clark = () => {
     resultado?: number;
   };
 
+  const [result, setResult] = React.useState(0);
   const [dataForCalc, setDataForCalc] = React.useState<TDataType>({
     peso: 0,
     doseAdulta: 0,
     dosesDiarias: 0,
   } as TDataType);
-
-  const [result, setResult] = React.useState(0);
+  const refPeso = React.useRef();
+  const refDoseAdulta = React.useRef();
+  const refDoseDiaria = React.useRef();
 
   const globalRegex = new RegExp(/[a-zA-Z@$&_]/, "g");
   const divisor = 70;
@@ -39,6 +41,7 @@ export const Clark = () => {
     <>
       <Header />
       <View style={styleMenu.safe}>
+        <Text style={styleMenu.label}>EQUAÇÃO DE CLARK</Text>
         <ScrollView>
           <View>
             <Text style={styleMenu.label}>Qual o peso da criança em kg?</Text>
@@ -53,6 +56,7 @@ export const Clark = () => {
               }
               keyboardType="numeric"
               defaultValue="0"
+              ref={refPeso}
             />
           </View>
           <View>
@@ -72,6 +76,7 @@ export const Clark = () => {
               }
               keyboardType="numeric"
               defaultValue="0"
+              ref={refDoseAdulta}
             />
           </View>
           <View>
@@ -91,6 +96,7 @@ export const Clark = () => {
               }
               keyboardType="numeric"
               defaultValue="0"
+              ref={refDoseDiaria}
             />
           </View>
           <View style={styleMenu.resultado}>

@@ -42,7 +42,7 @@ export default function Formulas() {
             action={() => navigation.navigate("clark")}
           />
           <RButton
-            text="Fiend"
+            text="Fried"
             icon="share"
             iconColor="orange"
             description="Baseado na idade em meses"

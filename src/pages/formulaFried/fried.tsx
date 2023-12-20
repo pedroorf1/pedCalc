@@ -16,13 +16,15 @@ export const Fried = () => {
     resultado?: number;
   };
 
+  const [result, setResult] = React.useState(0);
   const [dataForCalc, setDataForCalc] = React.useState<TDataType>({
     idade: 0,
     doseAdulta: 0,
     dosesDiarias: 0,
   } as TDataType);
-
-  const [result, setResult] = React.useState(0);
+  const refIdade = React.useRef();
+  const refDoseAdulta = React.useRef();
+  const refDoseDiaria = React.useRef();
 
   const globalRegex = new RegExp(/[a-zA-Z@$&_]/, "g");
   const divisor = 150;
@@ -31,12 +33,18 @@ export const Fried = () => {
     let calc = (dataForCalc.idade / divisor) * dataForCalc.doseAdulta;
     calc = Number(calc.toFixed(2));
     setResult(calc);
-  }, [dataForCalc]);
+  }, [
+    dataForCalc,
+    refIdade.current,
+    refDoseAdulta.current,
+    refDoseDiaria.current,
+  ]);
 
   return (
     <>
       <Header />
       <View style={styleMenu.safe}>
+        <Text style={styleMenu.label}>EQUAÇÃO DE FRIED</Text>
         <ScrollView>
           <View>
             <Text style={styleMenu.label}>
@@ -55,6 +63,7 @@ export const Fried = () => {
               }
               keyboardType="numeric"
               defaultValue="0"
+              ref={refIdade}
             />
           </View>
           <View>
@@ -74,6 +83,7 @@ export const Fried = () => {
               }
               keyboardType="numeric"
               defaultValue="0"
+              ref={refDoseAdulta}
             />
           </View>
           <View>
@@ -93,6 +103,7 @@ export const Fried = () => {
               }
               keyboardType="numeric"
               defaultValue="0"
+              ref={refDoseDiaria}
             />
           </View>
           <View style={styleMenu.resultado}>
