@@ -73,6 +73,5 @@ const styles = StyleSheet.create({
     color: "#FF1493",
     fontSize: 18,
     textAlign: "justify",
-    cursor: "pointer",
   },
 });
