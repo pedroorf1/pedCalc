@@ -11,6 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#0000CD"
     },
+    "rnCliPath": "./rn-cli.config.js",
     "assetBundlePatterns": [
       "**/*"
     ],

@@ -2,6 +2,7 @@
 ### Para instalção desse app você precisa autorizar nas conigurações do seu dispositivo android, isto acontece poque o app não está disponivel para playstore.
 
 * Antes de tentar realizar a instalção do app em seu dispositivo, siga o tutorial abaixo:
+* Apost realizar as ações do tutorial baixe sua versão do PadCalc [aqui](https://drive.google.com/drive/folders/19DNCReOmVUZwgA2LdyLRc2c01npsblNp?usp=drive_link):
 
 ### Como instalar apps de fontes desconhecidas no Android
 
