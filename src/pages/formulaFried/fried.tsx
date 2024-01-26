@@ -24,7 +24,6 @@ export const Fried = () => {
     resultado: 0,
   } as TDataType);
 
-  const globalRegex = new RegExp(/[a-zA-Z@$&_]/, "g");
   const divisor = 150;
 
   const calc = () => {
@@ -104,7 +103,7 @@ export const Fried = () => {
             <Text style={styleMenu.textResultados}>Aplicação</Text>
             <Text style={styleMenu.textResultadosDosagem}>
               {result > 0 && dataForCalc.dosesDiarias > 0
-                ? Number(result / dataForCalc.dosesDiarias).toFixed(4)
+                ? Number(result / dataForCalc.dosesDiarias).toFixed(3)
                 : null}{" "}
               / {dataForCalc.dosesDiarias}X ao dia
             </Text>
