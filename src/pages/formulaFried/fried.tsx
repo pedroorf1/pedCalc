@@ -16,29 +16,20 @@ export const Fried = () => {
     resultado?: number;
   };
 
-  const [result, setResult] = React.useState(0);
+  const [result, setResult] = React.useState<number>(0);
   const [dataForCalc, setDataForCalc] = React.useState<TDataType>({
     idade: 0,
     doseAdulta: 0,
     dosesDiarias: 0,
+    resultado: 0,
   } as TDataType);
-  const refIdade = React.useRef();
-  const refDoseAdulta = React.useRef();
-  const refDoseDiaria = React.useRef();
 
-  const globalRegex = new RegExp(/[a-zA-Z@$&_]/, "g");
   const divisor = 150;
 
-  React.useEffect(() => {
-    let calc = (dataForCalc.idade / divisor) * dataForCalc.doseAdulta;
-    calc = Number(calc.toFixed(2));
-    setResult(calc);
-  }, [
-    dataForCalc,
-    refIdade.current,
-    refDoseAdulta.current,
-    refDoseDiaria.current,
-  ]);
+  const calc = () => {
+    let _calc = (dataForCalc.idade * dataForCalc.doseAdulta) / divisor;
+    setResult(() => Number(_calc.toFixed(2)));
+  };
 
   return (
     <>
@@ -52,18 +43,15 @@ export const Fried = () => {
             </Text>
             <TextInput
               style={styleMenu.inputText}
-              onChangeText={(idade) =>
+              onChangeText={(value) =>
                 setDataForCalc({
                   ...dataForCalc,
-                  idade:
-                    !globalRegex.test(idade) && idade != ""
-                      ? parseInt(idade)
-                      : 0,
+                  idade: parseInt(value),
                 })
               }
+              onChange={() => calc()}
               keyboardType="numeric"
               defaultValue="0"
-              ref={refIdade}
             />
           </View>
           <View>
@@ -72,18 +60,15 @@ export const Fried = () => {
             </Text>
             <TextInput
               style={styleMenu.inputText}
-              onChangeText={(doseAdulta) =>
+              onChangeText={(value) =>
                 setDataForCalc({
                   ...dataForCalc,
-                  doseAdulta:
-                    !globalRegex.test(doseAdulta) && doseAdulta != ""
-                      ? parseInt(doseAdulta)
-                      : 0,
+                  doseAdulta: parseInt(value),
                 })
               }
+              onChange={() => calc()}
               keyboardType="numeric"
               defaultValue="0"
-              ref={refDoseAdulta}
             />
           </View>
           <View>
@@ -92,18 +77,15 @@ export const Fried = () => {
             </Text>
             <TextInput
               style={styleMenu.inputText}
-              onChangeText={(doses) =>
+              onChangeText={(value) =>
                 setDataForCalc({
                   ...dataForCalc,
-                  dosesDiarias:
-                    !globalRegex.test(doses) && doses != ""
-                      ? parseInt(doses)
-                      : 0,
+                  dosesDiarias: parseInt(value),
                 })
               }
+              onChange={() => calc()}
               keyboardType="numeric"
               defaultValue="0"
-              ref={refDoseDiaria}
             />
           </View>
           <View style={styleMenu.resultado}>
@@ -120,8 +102,8 @@ export const Fried = () => {
             <Text style={styleMenu.textResultadosDosagem}>{result}</Text>
             <Text style={styleMenu.textResultados}>Aplicação</Text>
             <Text style={styleMenu.textResultadosDosagem}>
-              {result & dataForCalc.dosesDiarias
-                ? Number(result / dataForCalc.dosesDiarias).toFixed(2)
+              {result > 0 && dataForCalc.dosesDiarias > 0
+                ? Number(result / dataForCalc.dosesDiarias).toFixed(3)
                 : null}{" "}
               / {dataForCalc.dosesDiarias}X ao dia
             </Text>
